@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 const Default = () => {
   return <h1>client side default</h1>
 }
-const Profile = () => {
-  return <h1>client side profile</h1>
+const Profile = ({ userName }) => {
+  return <h1>client side profile {userName ? `for ${userName}` : ``}</h1>
 }
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
     <Layout>
       <Router basepath="/app">
         <Profile path="/profile" />
+        <Profile path="/profile/:userName" />
         <Default path="/" />
       </Router>
     </Layout>
